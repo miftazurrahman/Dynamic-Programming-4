@@ -1,7 +1,7 @@
 # Dynamic-Programming-4
-# Dynamic Programing Problem Solving in java 
-# Generate Parentheses
-# problem:
+Dynamic Programing Problem Solving in java 
+Generate Parentheses
+problem:
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 
  
