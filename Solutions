@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String> res = new ArrayList<>();
+        backtrack(n, 0, 0, new StringBuilder(), res);
+        return res;
+    }
+
+    private void backtrack(int n, int open, int close, StringBuilder path, List<String> res) {
+        if (path.length() == 2 * n) {
+            res.add(path.toString());
+            return;
+        }
+        if (open < n) {                 // can add '(' if we still have quota
+            path.append('(');
+            backtrack(n, open + 1, close, path, res);
+            path.deleteCharAt(path.length() - 1);
+        }
+        if (close < open) {             // can add ')' only if it won’t break validity
+            path.append(')');
+            backtrack(n, open, close + 1, path, res);
+            path.deleteCharAt(path.length() - 1);
+        }
+    }
+}
+
